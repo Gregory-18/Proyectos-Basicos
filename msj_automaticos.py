@@ -1,7 +1,7 @@
 import pyautogui as pt
 import time 
 
-limite = input('Cantidad de mensajes: ')
+limite = int(input('Cantidad de mensajes: '))
 mensaje = str(input('Mensaje: '))
 i = 0
 
