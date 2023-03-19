@@ -53,28 +53,31 @@ class Convertidor:
 opcion = 0
 
 while True:
+    try:
+        n1 = float(input("\nIngrese el primer número: "))
+    except ValueError:
+        print("Error: Por favor ingrese un número válido")
+        continue
+    
     print("""
     Dime, ¿Qué conversión quieres hacer?
 
-    1) Entrar a la conversión de Longitud
-    2) Entrar a la conversión de Velocidad
-    3) Entrar a la conversión de Peso
+    1)Conversión de Longitud
+    2)Conversión de Velocidad
+    3)Conversión de Peso
     4) Terminar el programa.
     """)
     opcion = int(input("Elige una opción: "))
     
     if opcion == 1:
-        n1 = input('\nIngrese los CM a convertir: ')
         cm = Convertidor()
         cm.Longitud(n1)
     
     elif opcion == 2:
-        n1 = input('\nIngrese los KM a convertir: ')
         km = Convertidor()
         km.Velocidad(n1)
     
     elif opcion == 3:
-        n1 = input('\nIngrese los KG a convertir: ')
         kg = Convertidor()
         kg.Peso(n1)
 

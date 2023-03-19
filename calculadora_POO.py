@@ -27,9 +27,14 @@ class Calculadora:
 
 opcion = 0
 
-n1 = input('Dime tu primer numero: ')
-n2 = input('Dime tu segundo numero: ')
-while True:
+while True:  
+    try:
+        n1 = float(input("Ingrese el primer número: "))
+        n2 = float(input("Ingrese el segundo número: "))
+    except ValueError:
+        print("Error: Por favor ingrese un número válido")
+        continue
+    
     print("""
     Dime, ¿qué quieres hacer?
 
@@ -55,8 +60,12 @@ while True:
         dividir = Calculadora()
         dividir.Division(n1, n2)
     elif opcion == 5:
-        n1 = float(input("Introduce tu primer número: "))
-        n2 = float(input("Introduce tu segundo número: "))
+        try:
+            n1 = float(input("Ingrese el primer número: "))
+            n2 = float(input("Ingrese el segundo número: "))
+        except ValueError:
+            print("Error: Por favor ingrese un número válido")
+            continue
     elif opcion == 6:
         break
     else:
