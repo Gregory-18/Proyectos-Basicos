@@ -54,7 +54,7 @@ opcion = 0
 
 while True:
     try:
-        n1 = float(input("\nIngrese el primer número: "))
+        n1 = float(input("\nIngrese un número: "))
     except ValueError:
         print("Error: Por favor ingrese un número válido")
         continue
