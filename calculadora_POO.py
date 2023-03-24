@@ -24,16 +24,21 @@ class Calculadora:
         self.divi = self.n1 / self.n2
         print(f'\nEl resultado de la division de {self.n1} ÷ {self.n2} es: {self.divi}')        
 
-
-opcion = 0
-
-while True:  
+def coger_dos_numeros():
     try:
         n1 = float(input("Ingrese el primer número: "))
         n2 = float(input("Ingrese el segundo número: "))
+        return n1,n2
     except ValueError:
         print("Error: Por favor ingrese un número válido")
-        continue
+        return False
+
+opcion = 0
+while True:
+    numeros = False
+    while not numeros:
+        numeros = coger_dos_numeros()
+    n1,n2 = numeros
     
     print("""
     Dime, ¿qué quieres hacer?
@@ -60,12 +65,7 @@ while True:
         dividir = Calculadora()
         dividir.Division(n1, n2)
     elif opcion == 5:
-        try:
-            n1 = float(input("Ingrese el primer número: "))
-            n2 = float(input("Ingrese el segundo número: "))
-        except ValueError:
-            print("Error: Por favor ingrese un número válido")
-            continue
+        coger_dos_numeros()   
     elif opcion == 6:
         break
     else:
