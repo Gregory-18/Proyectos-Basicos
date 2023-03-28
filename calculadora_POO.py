@@ -4,25 +4,25 @@ class Calculadora:
         self.n1 = float(n1)
         self.n2 = float(n2)
         self.suma = self.n1 + self.n2
-        print(f'\nEl resultado de la suma de {self.n1} + {self.n2} es: {self.suma}')
-    
+        return self.suma
+
     def Resta(self, n1, n2):
         self.n1 = float(n1)
         self.n2 = float(n2)
         self.resta = self.n1 - self.n2
-        print(f'\nEl resultado de la resta de {self.n1} - {self.n2} es: {self.resta}')        
+        return self.resta
     
     def Multi(self, n1, n2):
         self.n1 = float(n1)
         self.n2 = float(n2)
         self.multi = self.n1 * self.n2
-        print(f'\nEl resultado de la multiplicacion de {self.n1} X {self.n2} es: {self.multi}')
+        return self.multi
     
     def Division(self, n1, n2):
         self.n1 = float(n1)
         self.n2 = float(n2)
         self.divi = self.n1 / self.n2
-        print(f'\nEl resultado de la division de {self.n1} ÷ {self.n2} es: {self.divi}')        
+        return self.divi
 
 def __error():
     try:
@@ -55,15 +55,22 @@ while True:
     if opcion == 1:
         sumar = Calculadora()
         sumar.Suma(n1, n2)
+        print(f'\nEl resultado de la suma de {n1} + {n2} es: {sumar.suma}')
     elif opcion == 2:
         restar = Calculadora()
         restar.Resta(n1, n2)
+        print(f'\nEl resultado de la resta de {n1} - {n2} es: {restar.resta}')        
+
     elif opcion == 3:
         multiplicar = Calculadora()
         multiplicar.Multi(n1, n2)
+        print(f'\nEl resultado de la multiplicacion de {n1} X {n2} es: {multiplicar.multi}')
+
     elif opcion == 4:
         dividir = Calculadora()
         dividir.Division(n1, n2)
+        print(f'\nEl resultado de la division de {n1} ÷ {n2} es: {dividir.divi}')        
+
     elif opcion == 5:
         continue   
     elif opcion == 6:
